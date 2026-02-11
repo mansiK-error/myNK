@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Mansi ❤️ NK</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+  body {
+    margin:0;
+    min-height:100vh;
+    background:linear-gradient(135deg,#ff6a88,#ff9bb5);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'Segoe UI', sans-serif;
+    overflow:hidden;
+  }
+
+  .letter {
+    background:white;
+    padding:40px;
+    border-radius:25px;
+    max-width:600px;
+    width:90%;
+    box-shadow:0 25px 50px rgba(0,0,0,0.25);
+    animation:fade 1s ease;
+    z-index:2;
+  }
+
+  @keyframes fade {
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
+  }
+
+  h1 {
+    color:#ff4d6d;
+    text-align:center;
+  }
+
+  p {
+    font-size:18px;
+    line-height:1.7;
+  }
+
+  .heart {
+    position:absolute;
+    bottom:-20px;
+    font-size:22px;
+    animation:floatUp linear forwards;
+    opacity:0.7;
+  }
+
+  @keyframes floatUp {
+    from {
+      transform:translateY(0) scale(1);
+      opacity:1;
+    }
+    to {
+      transform:translateY(-120vh) scale(1.6);
+      opacity:0;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="letter">
+  <h1>Dear NK 💖</h1>
+
+  <p style="font-size:22px;text-align:center;">
+    Jaan I love you dher saraa ❤️
+  </p>
+
+  <p style="text-align:right;margin-top:25px;">
+    — Mansi 💌
+  </p>
+</div>
+
+<script>
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.textContent = "💗";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = 5 + Math.random() * 5 + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 9000);
+  }
+
+  setInterval(createHeart, 700);
+</script>
+
+</body>
+</html>
